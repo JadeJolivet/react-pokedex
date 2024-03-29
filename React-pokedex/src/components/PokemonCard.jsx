@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 function PokemonCard ({pokemon}){ 
 
     return (
@@ -14,7 +16,7 @@ function PokemonCard ({pokemon}){
     );
   }
 
-import PropTypes from "prop-types";
+
 
   PokemonCard.propTypes = {
       pokemon: PropTypes.shape({

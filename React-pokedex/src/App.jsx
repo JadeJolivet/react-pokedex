@@ -1,10 +1,9 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import PokemonCard from "./components/PokemonCard"
+import React, { useState } from 'react';
+import PokemonCard from "./components/PokemonCard";
+import NavBar from './components/NavBar';
+import './App.css';
 
-const App = () => {
+function App(){
   const [pokemonIndex,setPokemonIndex] =
   useState(0); 
 
@@ -42,17 +41,19 @@ const App = () => {
       },
     ];
 
-  return (
-    <>
-      <PokemonCard pokemon={pokemonList[pokemonIndex]} />
-      <p>
-        {pokemonIndex > 0 && <button type="button" onClick={handlePreviousPokemon}>Previous Pokemon</button>}
-        {pokemonIndex < pokemonList.length - 1 && <button type="button" onClick={handleNextPokemon}>Next Pokemon</button>}
-      </p>
-    </>
-  );
-}
-
-export default App;
+    return (
+      <>
+        <PokemonCard pokemon={pokemonList[pokemonIndex]} />
+        <NavBar
+          pokemonIndex={pokemonIndex}
+          pokemonList={pokemonList}
+          handleNextPokemon={handleNextPokemon}
+          handlePreviousPokemon={handlePreviousPokemon}
+        />
+      </>
+    );
+  }
+  
+  export default App;
 
 
