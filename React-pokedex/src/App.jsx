@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import PokemonCard from "./components/PokemonCard";
 import NavBar from './components/NavBar';
 import './App.css';
@@ -6,6 +6,11 @@ import './App.css';
 function App(){
   const [pokemonIndex,setPokemonIndex] =
   useState(0); 
+
+  useEffect(() => {
+    alert("hello pokemon trainer :)");
+  }, []);
+
 
   const handleNextPokemon = () => {
     setPokemonIndex((prevIndex) => (prevIndex + 1) % pokemonList.length);
